@@ -34,35 +34,28 @@ let
 
   codingDeps = with pkgs; [
     # bruno # API explorer
-    cargo # Rust package manager
+    # cargo # Rust package manager
     # dotnet-sdk_7 # SDK for .net
     # gcc # C++ compiler
     # gdtoolkit_4 # Tools for gdscript
     # gnumake # A tool to control the generation of non-source files from sources
     nixfmt-rfc-style # A nix formatter
-    nodejs_18 # Node package manager
+    # nodejs_18 # Node package manager
     python3 # Python
   ];
 
   # Packages to add for a fork of the config
   myPackages = with pkgs; [
     amberol # A small and simple sound and music player
-    audacity # Sound editor with graphical UI
-    bun # Incredibly fast JavaScript runtime, bundler, transpiler and package manager
-    gradience # Customize libadwaita and GTK3 apps (with adw-gtk3)
     gsound # Small library for playing system sounds (required to show file properties in Nautilus)
-    mullvad-vpn # The GUI client for mullvad
-    nextcloud-client # Nextcloud themed desktop client
     pavucontrol # Sound manager
-    spotify # Music streaming service
-    stremio # Movie/Series/Anime streaming service
+    # spotify # Music streaming service
     ungoogled-chromium # Chromium with dependencies on Google web services removed
-    vesktop # An open source discord client
   ];
 
   packageWraps = with pkgs; [
     # Pipewire audio plugin for OBS Studio
-    (pkgs.wrapOBS { plugins = with pkgs.obs-studio-plugins; [ obs-pipewire-audio-capture ]; })
+    # (pkgs.wrapOBS { plugins = with pkgs.obs-studio-plugins; [ obs-pipewire-audio-capture ]; })
   ];
 
   shellScripts = [
@@ -83,13 +76,6 @@ in
     aagl-gtk-on-nix.module
     configs/pipewire.nix
   ];
-
-  # Enable Genshin Impact launcher
-  programs.anime-game-launcher.enable = true;
-  nix.settings = {
-    substituters = [ "https://ezkea.cachix.org" ];
-    trusted-public-keys = [ "ezkea.cachix.org-1:ioBmUbJTZIKsHmWWXPe1FSFbeVe+afhfgqgTSNd34eI=" ];
-  };
 
   boot.kernelPackages = mkIf (
     !cfg.hardware.devices.steamdeck && builtins.pathExists /etc/icedos-version
@@ -112,10 +98,10 @@ in
       # endeavour # Tasks
       fd # Find alternative
       fragments # Bittorrent client following Gnome UI standards
-      gimp # Image editor
+      # gimp # Image editor
       gping # ping with a graph
       # gthumb # Image viewer
-      helvum # Pipewire patchbay
+      # helvum # Pipewire patchbay
       # iotas # Notes
       # jc # JSON parser
       jq # JSON parser
@@ -127,10 +113,10 @@ in
       # moonlight-qt # Remote streaming
       mousai # Song recognizer
       ncdu # Terminal disk analyzer
-      newsflash # RSS reader
+      # newsflash # RSS reader
       nix-health # Check system health
       ntfs3g # Support NTFS drives
-      obs-studio # Recording/Livestream
+      # obs-studio # Recording/Livestream
       onlyoffice-bin # Microsoft Office alternative for Linux
       p7zip # 7zip
       pavucontrol # Sound manager
@@ -138,15 +124,15 @@ in
       rnnoise-plugin # A real-time noise suppression plugin
       scrcpy # Remotely use android
       signal-desktop # Encrypted messaging platform
-      solaar # Logitech devices manager
+      # solaar # Logitech devices manager
       tailscale # VPN with P2P support
       tmux # Terminal multiplexer
-      trayscale # Tailscale GUI
-      tree # Display folder content at a tree format
+      # trayscale # Tailscale GUI
+      # tree # Display folder content at a tree format
       unrar # Support opening rar files
       unzip # An extraction utility
-      warp # File sync
-      wget # Terminal downloader
+      # warp # File sync
+      # wget # Terminal downloader
       wine # Compatibility layer capable of running Windows applications
       winetricks # Wine prefix settings manager
       # woeusb # Windows ISO Burner
@@ -159,10 +145,6 @@ in
     ++ myPackages
     ++ packageWraps
     ++ shellScripts;
-
-  environment.variables = {
-    PUPPETEER_EXECUTABLE_PATH = "${pkgs.ungoogled-chromium}/bin/chromium";
-  };
 
   users.defaultUserShell = pkgs.zsh; # Use ZSH shell for all users
 
@@ -225,7 +207,7 @@ in
 
   services = {
     clamav.updater.enable = true;
-    mullvad-vpn.enable = true;
+    mullvad-vpn.enable = false;
     openssh.enable = true;
     tailscale.enable = true;
     fwupd.enable = true;

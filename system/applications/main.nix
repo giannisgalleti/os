@@ -41,10 +41,10 @@ let
   emulators =
     with pkgs;
     [
-      # duckstation # PS1
-      # pcsx2 # PS2
-      # ppsspp # PSP
-      # rpcs3 # PS3
+      duckstation # PS1
+      pcsx2 # PS2
+      ppsspp # PSP
+      rpcs3 # PS3
     ]
     ++ optional (cfg.applications.emulators.switch) inputs.switch-emulators.packages.${pkgs.system}.suyu
     ++ optional (cfg.applications.emulators.wiiu) cemu;
@@ -52,7 +52,7 @@ let
   gaming = with pkgs; [
     # heroic # Epic Games Launcher for Linux
     # papermc # Minecraft server
-    prismlauncher # Minecraft launcher
+    # prismlauncher # Minecraft launcher
     protontricks # Winetricks for proton prefixes
     steamtinkerlaunch # General tweaks for games
   ];
@@ -76,7 +76,7 @@ mkIf (cfg.system.users.main.enable) {
       # ludusavi # Cloud backup with Nextcloud
       # rclone # Sync to and from nextcloud
       # scanmem # Cheat engine for linux
-      # stremio # Straming platform
+      stremio # Straming platform
     ]
     ++ emulators
     ++ gaming
@@ -99,7 +99,7 @@ mkIf (cfg.system.users.main.enable) {
   };
 
   services = {
-    teamviewer.enable = true;
+    teamviewer.enable = false;
     input-remapper = {
       enable = true;
       enableUdevRules = true;

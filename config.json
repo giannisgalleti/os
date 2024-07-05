@@ -31,7 +31,7 @@
         "hideDecorations": true
       },
       "firefox": {
-        "enable": true,
+        "enable": false,
         "overrides": false,
         "privacy": false,
         "pwas": [
@@ -43,11 +43,7 @@
         "enable": true,
         "overrides": false,
         "privacy": false,
-        "pwas": [
-          "https://app.tuta.com",
-          "https://develop.element.io",
-          "https://discord.com/app"
-        ]
+        "pwas": []
       },
       "nvchad": false,
       "steam": {
@@ -61,7 +57,7 @@
           }
         }
       },
-      "sunshine": false,
+      "sunshine": true,
       "emulators": {
         "switch": false,
         "wiiu": false
@@ -80,8 +76,8 @@
     },
     "desktop": {
       "autologin": {
-        "enable": false,
-        "user": "stef"
+        "enable": true,
+        "user": "giannis"
       },
       "gdm": {
         "enable": true,
@@ -130,7 +126,7 @@
         "amd": {
           "enable": true,
           "undervolt": {
-            "enable": true,
+            "enable": false,
             "value": "-p 0 -v 40 -f B0"
           }
         },
@@ -155,15 +151,15 @@
         "main": {
           "enable": true,
           "deck": false,
-          "name": "DP-1",
-          "resolution": "3440x1440",
-          "refreshRate": 120,
+          "name": "DP-2",
+          "resolution": "2560x1440",
+          "refreshRate": 144,
           "position": "0x0",
           "scaling": 1,
           "rotation": 0
         },
         "second": {
-          "enable": true,
+          "enable": false,
           "deck": false,
           "name": "DP-2",
           "resolution": "1920x1080",
@@ -190,9 +186,9 @@
       },
       "mounts": true,
       "virtualisation": {
-        "docker": true,
-        "libvirtd": true,
-        "lxd": true,
+        "docker": false,
+        "libvirtd": false,
+        "lxd": false,
         "spiceUSBRedirection": true,
         "waydroid": false
       }
@@ -200,7 +196,7 @@
     "system": {
       "config": { "version": "1.0.0" },
       "generations": {
-        "bootEntries": 30,
+        "bootEntries": 20,
         "garbageCollect": {
           "days": 7,
           "generations": 5
@@ -211,8 +207,8 @@
       "users": {
         "main": {
           "enable": true,
-          "username": "stef",
-          "description": "Stefanos",
+          "username": "giannis",
+          "description": "Giannis",
           "applications": {
             "codium": {
               "autoSave": "onFocusChange",
@@ -220,10 +216,12 @@
               "formatOnPaste": false
             },
             "git": {
-              "username": "CrazyStevenz",
-              "email": "github.ekta@aleeas.com"
+              "username": "giannisgalleti",
+              "email": "giannispapanatsios@yahoo.gr"
             },
-            "nvchad": { "formatOnSave": true }
+            "nvchad": {
+              "formatOnSave": true
+            }
           },
           "desktop": {
             "gnome": {
@@ -234,22 +232,51 @@
                     "Codium IDE",
                     "",
                     "codiumIDE.desktop",
-                    "VSCodium",
+                    "Duckstation",
                     "",
-                    "codium.desktop",
-                    "Mullvad VPN",
+                    "org.duckstation.DuckStation.desktop",
+                    "PCSX2",
                     "",
-                    "mullvad-vpn.desktop",
-                    "GNU Image Manipulation Program",
+                    "PCSX2.desktop",
+                    "PPSSPP",
                     "",
-                    "gimp.desktop"
+                    "ppsspp.desktop",
+                    "PRCS3",
+                    "",
+                    "rpcs3.desktop",
+                    "Stremio",
+                    "",
+                    "smartcode-stremio.desktop",
+                    "OpenRGB",
+                    "",
+                    "OpenRGB.desktop",
+                    "Bottles",
+                    "",
+                    "com.usebottles.bottles.desktop",
+                    "Files",
+                    "",
+                    "org.gnome.Nautilus.desktop",
+                    "LACT",
+                    "",
+                    "io.github.lact-linux.desktop",
+                    "Mission Center",
+                    "",
+                    "io.missioncenter.MissionCenter.desktop",
+                    "Mousai",
+                    "",
+                    "io.github.seadve.Mousai.desktop",
+                    "OnlyOffice",
+                    "",
+                    "onlyoffice-desktopeditors.desktop",
+                    "Settings",
+                    "",
+                    "org.gnome.Settings.desktop"
                   ]
                 },
                 "shell": {
                   "enable": true,
                   "list": [
                     "steam.desktop",
-                    "vesktop.desktop",
                     "signal-desktop.desktop",
                     "librewolf.desktop"
                   ]
@@ -273,7 +300,7 @@
           }
         },
         "work": {
-          "enable": true,
+          "enable": false,
           "username": "work",
           "description": "Work",
           "applications": {
@@ -286,7 +313,9 @@
               "username": "CrazyStevenz",
               "email": "github.ekta@aleeas.com"
             },
-            "nvchad": { "formatOnSave": false }
+            "nvchad": {
+              "formatOnSave": false
+            }
           },
           "desktop": {
             "gnome": {
@@ -337,7 +366,7 @@
           }
         }
       },
-      "version": "23.05"
+      "version": "24.05"
     }
   }
 }

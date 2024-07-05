@@ -10,7 +10,7 @@ printf "$PWD" > "$CONFIG"
 
 # Generate flake.nix
 [ -f "$FLAKE" ] && rm -f "$FLAKE"
-nix eval --write-to "$FLAKE" --file "genflake.nix" "$FLAKE"
+nix eval --extra-experimental-features nix-command --write-to "$FLAKE" --file "genflake.nix" "$FLAKE"
 nixfmt "$FLAKE"
 
 # Build the system configuration
