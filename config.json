@@ -290,7 +290,7 @@
               },
               "disableMonitors": {
                 "enable": true,
-                "seconds": 300
+                "seconds": 3600
               },
               "suspend": {
                 "enable": false,
