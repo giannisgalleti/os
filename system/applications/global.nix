@@ -51,6 +51,7 @@ let
     pavucontrol # Sound manager
     # spotify # Music streaming service
     ungoogled-chromium # Chromium with dependencies on Google web services removed
+    qbittorrent
   ];
 
   packageWraps = with pkgs; [
@@ -97,7 +98,7 @@ in
       efibootmgr # Edit EFI entries
       # endeavour # Tasks
       fd # Find alternative
-      fragments # Bittorrent client following Gnome UI standards
+      # fragments # Bittorrent client following Gnome UI standards
       # gimp # Image editor
       gping # ping with a graph
       # gthumb # Image viewer
