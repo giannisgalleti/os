@@ -99,7 +99,7 @@ mkIf (cfg.system.users.main.enable) {
   };
 
   services = {
-    teamviewer.enable = false;
+    teamviewer.enable = true;
     input-remapper = {
       enable = true;
       enableUdevRules = true;
