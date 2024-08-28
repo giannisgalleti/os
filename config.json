@@ -180,7 +180,7 @@
         }
       },
       "networking": {
-        "hostname": "desktop",
+        "hostname": "giannisdesktop",
         "hosts": false,
         "ipv6": false
       },
