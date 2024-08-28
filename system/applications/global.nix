@@ -49,7 +49,7 @@ let
     amberol # A small and simple sound and music player
     gsound # Small library for playing system sounds (required to show file properties in Nautilus)
     pavucontrol # Sound manager
-    # spotify # Music streaming service
+    spotify # Music streaming service
     ungoogled-chromium # Chromium with dependencies on Google web services removed
     qbittorrent
   ];
